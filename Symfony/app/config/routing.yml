@@ -1,0 +1,4 @@
+ll_barter:
+    resource: "@LLBarterBundle/Resources/config/routing.yml"
+    prefix:   /
+

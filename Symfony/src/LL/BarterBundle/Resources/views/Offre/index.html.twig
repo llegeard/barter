@@ -1,0 +1,47 @@
+{# src/LL/BarterBundle/Resources/views/Offre/index.html.twig #}
+{% extends "LLBarterBundle::layout.html.twig" %}
+
+{% block stylesheets %}
+    {{ parent()}}
+    {% stylesheets '@LLBarterBundle/Resources/public/css/styles.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block navbar %}
+
+{% endblock %}
+{% block fullbody %}
+
+    <div class="container-full">
+
+        <div class="row">
+
+            <div class="col-lg-12 text-center v-center">
+                <br /><br /><br />
+
+                <h1 style="color:white">Barter</h1>
+                <p class="lead" style="color:white">Echange de biens et services B2B</p>
+
+                <br><br>
+
+                <form class="col-lg-12">
+                    <span class="input-group-btn"><a href="{{ path('add')}}"><button class="btn btn-lg btn-primary" type="button">Ajouter une offre</button></a></span>
+
+                </form>
+            </div>
+
+        </div> <!-- /row -->
+
+        <div class="row">
+
+            <div class="col-lg-12 text-center v-center" style="font-size:39pt;">
+                <a href="#"><i class="icon-google-plus"></i></a> <a href="#"><i class="icon-facebook"></i></a>  <a href="#"><i class="icon-twitter"></i></a> <a href="#"><i class="icon-github"></i></a> <a href="#"><i class="icon-pinterest"></i></a>
+            </div>
+
+        </div>
+
+        <br><br><br><br><br>
+
+    </div> <!-- /container full -->
+{% endblock %}

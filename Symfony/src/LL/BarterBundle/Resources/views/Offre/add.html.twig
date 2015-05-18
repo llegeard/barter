@@ -1,0 +1,148 @@
+{# src/LL/BarterBundle/Resources/views/Offre/add.html.twig #}
+{% extends "LLBarterBundle::layout.html.twig" %}
+{% block title %}Poster une offre{% endblock %}
+{% block body %}
+    <h1 class="text-center">Votre offre</h1>
+    <br />
+
+
+
+
+
+    <div class="well">
+        {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+        {# Les erreurs générales du formulaire. #}
+        {{ form_errors(form) }}
+
+        <div class="form-group">
+            {# Génération du label. #}
+            {{ form_label(form.titre, "Titre de l'annonce", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+
+            {# Affichage des erreurs pour ce champ précis. #}
+            {{ form_errors(form.titre) }}
+
+            <div class="col-sm-4">
+                {# Génération de l'input. #}
+                {{ form_widget(form.titre, {'attr': {'class': 'form-control', 'placeholder' : 'Titre'}}) }}
+            </div>
+        </div>
+
+        {# Idem pour un autre champ. #}
+        <div class="form-group">
+            {{ form_label(form.description, "Contenu de l'annonce", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+            {{ form_errors(form.description) }}
+            <div class="col-sm-4">
+                {{ form_widget(form.description, {'attr': {'class': 'form-control', 'placeholder' : 'Description'}}) }}
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            {{ form_label(form.category, "Choisissez une catégorie", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+            {{ form_errors(form.category) }}
+            <div class="col-sm-4">
+                {{ form_widget(form.category, {'attr': {'class': 'form-control'}}) }}
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.devis, "Devis ou prix fixe", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+            <div class="col-sm-4">
+                <div id="selector_devis" class="btn-group">
+                    <button type="button" class="btn active btn-primary" OnClick="$('#ll_barterbundle_offre_devis').val('1');
+                            $('#ll_barterbundle_offre_montant').attr('disabled', true);
+                            $('#ll_barterbundle_offre_montant').val('0');">Devis</button>
+                    <button type="button" class="btn btn-primary" OnClick="$('#ll_barterbundle_offre_devis').val('0');
+                            $('#ll_barterbundle_offre_montant').attr('disabled', false);">Prix fixe</button>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            {{ form_label(form.montant, "Montant de l'annonce (€)", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+            {{ form_errors(form.montant) }}
+            <div class="col-sm-4">
+                {{ form_widget(form.montant, {'attr': {'class': 'form-control', 'disabled' : 'true'}}) }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.barter, "Choisissez un pourcentage", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+            <div class="col-sm-4">
+
+
+                <div id="selector_barter" class="btn-group">
+                    <button type="button" class="btn active btn-primary" OnClick="$('#ll_barterbundle_offre_barter').val('100');">100</button>
+                    <button type="button" class="btn btn-primary" OnClick="$('#ll_barterbundle_offre_barter').val('75');">75</button>
+                    <button type="button" class="btn btn-primary" OnClick="$('#ll_barterbundle_offre_barter').val('50');">50</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.document, "Choisissez un document", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+            {{ form_errors(form.document) }}
+            <div class="col-sm-4">
+
+                {{ form_widget(form.document)}}
+
+
+            </div>
+        </div>
+
+
+        <div class="form-group text-center">
+            {# Pour le bouton, pas de label ni d'erreur, on affiche juste le widget #}
+            {{ form_widget(form.ajouter, {'attr': {'class': 'btn btn-primary btn-lg'}}) }}
+
+        </div>
+
+        {# Génération automatique des champs pas encore écrits.
+           Dans cet exemple, ce serait le champ CSRF (géré automatiquement par Symfony !)
+           et tous les champs cachés (type « hidden »). #}
+        {{ form_rest(form) }}
+
+        {# Fermeture de la balise <form> du formulaire HTML #}
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}
+
+
+
+
+{% block javascripts %}
+    {% javascripts '@LLBarterBundle/Resources/public/js/bootstrap.file-input.js' %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    {{ parent()}}
+    <script type="text/javascript">
+        $('input[type=file]').bootstrapFileInput();
+        $("label[for='ll_barterbundle_offre_document_file']").text("");
+        $("#ll_barterbundle_offre_document span").text("Parcourir...");
+
+        $('#selector_devis button').click(function () {
+            $(this).addClass('active').siblings().removeClass('active');
+
+            // TODO: insert whatever you want to do with $(this) here
+        });
+
+        $('#selector_barter button').click(function () {
+            $(this).addClass('active').siblings().removeClass('active');
+
+            // TODO: insert whatever you want to do with $(this) here
+        });
+
+
+
+
+    </script>
+
+
+
+{% endblock %}

@@ -1,0 +1,13 @@
+index:
+    path:     /
+    defaults: { _controller: LLBarterBundle:Offre:index }
+     
+add:
+    path:     /poster
+    defaults: { _controller: LLBarterBundle:Offre:add }
+    
+view:
+    path:      /offre/{id}
+    defaults:  { _controller: LLBarterBundle:Offre:view }
+    requirements:
+        id:   \d+

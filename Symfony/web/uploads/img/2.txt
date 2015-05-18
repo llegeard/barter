@@ -1,0 +1,33 @@
+2015-05-12 11:40:59 ERROR  : Error connecting to the server: FATAL:  password authentication failed for user "postgres"
+FATAL:  password authentication failed for user "postgres"
+
+2015-05-12 11:41:28 ERROR  : Error connecting to the server: FATAL:  password authentication failed for user "llegeard"
+FATAL:  password authentication failed for user "llegeard"
+
+2015-05-12 11:43:20 ERROR  : Error connecting to the server: FATAL:  role "llegeard" does not exist
+
+2015-05-12 11:44:00 ERROR  : Error connecting to the server: FATAL:  Peer authentication failed for user "postgre"
+
+2015-05-12 11:46:38 ERROR  : Error connecting to the server: FATAL:  password authentication failed for user "llegeard"
+FATAL:  password authentication failed for user "llegeard"
+
+2015-05-12 11:47:23 ERROR  : Error connecting to the server: FATAL:  password authentication failed for user "root"
+FATAL:  password authentication failed for user "root"
+
+2015-05-12 11:47:50 ERROR  : Error connecting to the server: FATAL:  password authentication failed for user "root"
+FATAL:  password authentication failed for user "root"
+
+2015-05-12 11:50:54 ERROR  : Error connecting to the server: FATAL:  password authentication failed for user "postgres"
+FATAL:  password authentication failed for user "postgres"
+
+2015-05-12 11:52:50 ERROR  : Error connecting to the server: FATAL:  password authentication failed for user "postgres"
+FATAL:  password authentication failed for user "postgres"
+
+2015-05-12 12:13:50 ERROR  : FATAL:  password authentication failed for user "postgres"
+FATAL:  password authentication failed for user "postgres"
+
+2015-05-12 12:14:05 ERROR  : FATAL:  password authentication failed for user "postgres"
+FATAL:  password authentication failed for user "postgres"
+
+2015-05-12 12:18:31 ERROR  : Error connecting to the server: could not translate host name "postgres" to address: Nom ou service inconnu
+

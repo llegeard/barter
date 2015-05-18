@@ -1,0 +1,35 @@
+{# src/LL/BarterBundle/Resources/views/Offre/view.html.twig #}
+{% extends "LLBarterBundle::layout.html.twig" %}
+
+
+
+{% block body %}
+    <br /><br />
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+        <div class="alert alert-success" role="alert">
+            <div class="flash-notice">
+                {{ flashMessage }}
+            </div>
+        </div>
+    {% endfor %}
+    <div class="jumbotron">
+        <h1 class="text-center">{{offre.titre}}</h1>
+        <p>{{offre.description}}</p>
+
+        {% if offre.devis == false %}
+
+            <p><b>Montant : </b>
+                {% if offre.montant == null %}
+                    0
+                {% else %}
+                    {{offre.montant}}
+                {% endif %} €
+            </p>
+        {% endif %}
+
+
+        <p><b>Pourcentage en Barter :</b> {{offre.barter}} %</p>
+
+        <p><b>Catégorie : </b>{{offre.category.name}}</p>
+    </div>
+{% endblock %}

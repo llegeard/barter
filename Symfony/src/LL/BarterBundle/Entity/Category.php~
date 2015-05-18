@@ -1,0 +1,82 @@
+<?php
+
+namespace LL\BarterBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Category
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="LL\BarterBundle\Entity\CategoryRepository")
+ */
+class Category {
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255)
+     */
+    private $name;
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId() {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Category
+     */
+    public function setName($name) {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName() {
+        return $this->name;
+    }
+
+    /**
+     * Set offre
+     *
+     * @param \LL\BarterBundle\Entity\Offre $offre
+     * @return Category
+     */
+    public function setOffre(\LL\BarterBundle\Entity\Offre $offre) {
+        $this->offre = $offre;
+
+        return $this;
+    }
+
+    /**
+     * Get offre
+     *
+     * @return \LL\BarterBundle\Entity\Offre
+     */
+    public function getOffre() {
+        return $this->offre;
+    }
+
+}
